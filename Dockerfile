@@ -17,5 +17,11 @@ WORKDIR /app/
 # Install Python requirements
 RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
 
-# Run your app
+# 🔹 Add environment variable for Render port
+ENV PORT=10000
+
+# 🔹 Expose the port (optional but good practice)
+EXPOSE $PORT
+
+# 🔹 Run Flask app correctly
 CMD ["python3", "main.py"]
